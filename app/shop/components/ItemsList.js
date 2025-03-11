@@ -1,6 +1,6 @@
 import EditItemForm from './EditItemForm';
 
-export default function ItemsList({items, saveItem, deleteItem}) {
+export default function ItemsList({addItemToCart, items, saveItem, deleteItem}) {
     const listItems = Object.values(items).map(item =>
         <li key={item.id}>
            <img src={item.image} width="30" height="30" />
@@ -8,6 +8,7 @@ export default function ItemsList({items, saveItem, deleteItem}) {
           <p>{item.description}</p>
           <button onClick={() => deleteItem(item)}>X</button>
           <EditItemForm item={item} saveItem={saveItem}/>
+          <button onClick={() => addItemToCart(item)}>🛒</button>
         </li>
       );
       

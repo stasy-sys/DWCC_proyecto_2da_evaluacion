@@ -22,6 +22,10 @@ export default class ItemRepository {
         return JSON.parse(localStorage.getItem("items") || '{}');
     }
 
+    getById(id){
+        return JSON.parse(localStorage.getItem("items") || '{}')[id];
+    }
+
     delete(item) {
         let items = JSON.parse(localStorage.getItem("items") || '{}');
         delete items[item.id];

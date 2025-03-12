@@ -11,7 +11,7 @@
 4. Create shopping cart initial page.
     1. ~~Create cart in local storage.~~
     2. ~~Create add item to cart button and logic.~~
-    3. Create cart component (lists cart items and show total price).
+    3. ~~Create cart component (lists cart items and show total price).~~
     4. Create "change quantity" for cart list.
     5. Create "remove" button for cart list.
 5. Create login/register initial page.

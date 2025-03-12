@@ -7,7 +7,7 @@ export default function CreateRandomItem({saveItem}) {
             null,
             faker.commerce.productName(),
             faker.commerce.productDescription(),
-            faker.commerce.price(),
+            Math.round(faker.commerce.price({min: 1, max: 110})*100),
             faker.image.url(),
             faker.number.int({ min: 10, max: 120, multipleOf: 10 }),
         );

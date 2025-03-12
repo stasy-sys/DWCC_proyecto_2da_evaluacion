@@ -7,10 +7,23 @@ import CreateItemForm from './components/CreateItemForm';
 import CreateRandomItem from './components/CreateRandomItem';
 import ItemsList from './components/ItemsList';
 import ItemRepository from '@/app/repositories/ItemRepository';
+import CartComponent from './components/CartComponent';
 
 export default function Shop() {
     const cartRepo = new CartRepository();
     const [cart, setCart] = useState(cartRepo.getById(1));
+    const [cartItems, setCartItems] = useState(cart.itemsList);
+    function saveCart(cart){
+        cartRepo.save(cart);
+        setCart(cart);
+        setCartItems({...cart.itemsList});
+        console.log(cart, cartItems);
+    }
+    function addItemToCart(item, quantity=1){
+        cart.addItem(item, quantity);
+        saveCart(cart);
+    }
+
     if (cart === undefined){
         let newCart = new Cart(null);
         console.log(newCart);
@@ -35,16 +48,6 @@ export default function Shop() {
         }
     }
 
-    function saveCart(cart){
-        cartRepo.save(cart);
-        setCart(cart);
-    }
-    function addItemToCart(item, quantity=1){
-        console.log(cart);
-        cart.addItem(item, quantity);
-        saveCart(cart);
-    }
-
     return (
         <div>
             <CreateItemForm saveItem={saveItem} />
@@ -55,6 +58,7 @@ export default function Shop() {
                 saveItem={saveItem}
                 deleteItem={deleteItem}
             />
+            <CartComponent cart={cart} cartItems={cartItems}/>
         </div>
     );
 }

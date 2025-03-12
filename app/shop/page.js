@@ -16,6 +16,7 @@ export default function Shop() {
     function saveCart(cart){
         cartRepo.save(cart);
         setCart(cart);
+        // Why do I need this?
         setCartItems({...cart.itemsList});
         console.log(cart, cartItems);
     }
@@ -52,13 +53,13 @@ export default function Shop() {
         <div>
             <CreateItemForm saveItem={saveItem} />
             <CreateRandomItem saveItem={saveItem} />
+            <CartComponent cart={cart} addItemToCart={addItemToCart} saveCart={saveCart}/>
             <ItemsList
                 addItemToCart={addItemToCart}
                 items={items}
                 saveItem={saveItem}
                 deleteItem={deleteItem}
             />
-            <CartComponent cart={cart} cartItems={cartItems}/>
         </div>
     );
 }

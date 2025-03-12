@@ -1,5 +1,5 @@
 import Item from '@/app/models/item';
-import styles from './styles.module.css'
+import styles from './CreateItemForm.module.css'
 
 export default function CreateItemForm({saveItem}) {
     function save(formData) {

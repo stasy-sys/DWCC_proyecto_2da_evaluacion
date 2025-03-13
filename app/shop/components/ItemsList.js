@@ -7,7 +7,7 @@ export default function ItemsList({addItemToCart, items, saveItem, deleteItem, u
           <img title={item.description} src={item.image} width="130px" height="130px" />
           <h4>{item.name} <i>({item.price/100}€)</i></h4> 
           {/* <p>{item.description}</p> */}
-          <button onClick={() => addItemToCart(item)}>🛒</button>
+          <button onClick={() => addItemToCart(item)}>Add to cart 🛒</button>
           {user.isAdmin &&<>
             <button onClick={() => deleteItem(item)}>❌</button>
             <EditItemForm item={item} saveItem={saveItem}/>

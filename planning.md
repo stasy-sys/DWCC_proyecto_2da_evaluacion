@@ -20,6 +20,6 @@
     3. ~~Create login form.~~
     4. ~~Create logout button.~~
 6. ~~Create users logic.~~
-7. Design andd implement ux/ui
+7. ~~Design andd implement ux/ui.~~
 8. Deliver and present.
 9. Celebrate.

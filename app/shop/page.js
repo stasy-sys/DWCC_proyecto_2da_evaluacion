@@ -3,6 +3,8 @@ import React from 'react';
 import { useState } from 'react';
 import { redirect } from 'next/navigation';
 
+import styles from './page.module.css';
+
 import Cart from '@/app/models/Cart';
 import CartRepository from '@/app/repositories/CartRepository';
 import CreateItemForm from './components/CreateItemForm';
@@ -59,13 +61,16 @@ export default function Shop() {
     }
 
     return <>
-        <HeaderComponent user={user}/>
+        <HeaderComponent user={user} cart={
+            <CartComponent cart={cart} addItemToCart={addItemToCart} saveCart={saveCart}/>
+        }/>
         <div>
             {user.isAdmin &&<>
-                <CreateItemForm saveItem={saveItem} />
-                <CreateRandomItem saveItem={saveItem} />
+                <div className={styles.newItem}>
+                    <CreateItemForm saveItem={saveItem} />
+                    <CreateRandomItem saveItem={saveItem} />
+                </div>
             </>}
-            <CartComponent cart={cart} addItemToCart={addItemToCart} saveCart={saveCart}/>
             <ItemsList
                 user={user}
                 addItemToCart={addItemToCart}

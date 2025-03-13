@@ -7,6 +7,7 @@ import styles from './page.module.css';
 
 import User from '@/app/models/User';
 import UserRepository from '@/app/repositories/UserRepository';
+import HeaderComponent from '../components/HeaderComponent';
 
 export default function Register() {
     const userRepo = new UserRepository();
@@ -38,6 +39,7 @@ export default function Register() {
         redirect(`/shop`);
     }
     return <>
+        <HeaderComponent user={user}/>
         <form action={loginOrRegister} className={styles.registry}>
             <h3>Register/Login</h3>
             {user !== null && (<i>You're already logged in.

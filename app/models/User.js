@@ -3,5 +3,6 @@ export default class User {
         this.username = username;
         this.password = password;
         this.isAdmin = isAdmin;
+        this.cartId = null;
     }
 }

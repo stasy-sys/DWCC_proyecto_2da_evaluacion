@@ -2,3 +2,7 @@
 .form > input {
     display: block;
 }
+
+.form input:user-invalid {
+    border: 2px dashed red;
+}

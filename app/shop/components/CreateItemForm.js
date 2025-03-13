@@ -8,7 +8,7 @@ export default function CreateItemForm({saveItem}) {
             formData.get("name"),
             formData.get("description"),
             formData.get("price"),
-            formData.get("image"),
+            formData.get("image") || "/uploads/default.jpeg",
             formData.get("stock"),
         );
         saveItem(item);
@@ -16,11 +16,11 @@ export default function CreateItemForm({saveItem}) {
 
     return <>
     <form action={save} className={styles.form}>
-        <label htmlFor="name">Name</label><input name="name" type="text"/>
-        <label htmlFor="name">Description</label><input name="description" type="text"/>
-        <label htmlFor="name">Price</label><input name="price" type="text"/>
-        <label htmlFor="name">Image</label><input name="image" type="text"/>
-        <label htmlFor="name">Stock</label><input name="stock" type="text"/>
+        <label htmlFor="name">Name</label><input required={true} name="name" type="text"/>
+        <label htmlFor="name">Description</label><input required={true} name="description" type="text"/>
+        <label htmlFor="name">Price (cents)</label><input required={true} name="price" type="number" min="0"/>
+        <label htmlFor="name">Image</label><input name="image" type="text" defaultValue={"/uploads/default.jpeg"}/>
+        <label htmlFor="name">Stock</label><input required={true} type="number" min="1" name="stock"/>
         <input type="submit" value="Create New Item" />
     </form>
     </>

@@ -40,7 +40,7 @@ export default function Register() {
     }
     return <>
         <HeaderComponent user={user}/>
-        <form action={loginOrRegister} className={styles.registry}>
+        <form action={loginOrRegister} className={styles.registry} autocomplete="off">
             <h3>Register/Login</h3>
             {user !== null && (<i>You're already logged in.
                 <button onClick={() => logOutUser(user)}>Log out</button>
@@ -51,11 +51,11 @@ export default function Register() {
             {user === null && (<>
                 <span>
                     <label htmlFor="username">Username:</label>
-                    <input type="text" name="username"/>
+                    <input required={true} type="text" name="username"/>
                 </span>
                 <span>
                     <label htmlFor="password">Password:</label>
-                    <input type="password" name="password"/>
+                    <input required={true} type="password" name="password"/>
                 </span>
                 <span>
                     <label htmlFor="password">isAdmin:</label>

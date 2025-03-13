@@ -28,6 +28,11 @@
     padding: 5px;
     width: 100%;
 }
+
+.form input:user-invalid {
+    border: 2px dashed red;
+}
+
 .form input[type="submit"],
 .form input[type="button"] {
     width:50%;

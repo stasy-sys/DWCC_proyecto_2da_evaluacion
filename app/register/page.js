@@ -40,7 +40,7 @@ export default function Register() {
     }
     return <>
         <HeaderComponent user={user}/>
-        <form action={loginOrRegister} className={styles.registry} autocomplete="off">
+        <form action={loginOrRegister} className={styles.registry} autoComplete="off">
             <h3>Register/Login</h3>
             {user !== null && (<i>You're already logged in.
                 <button onClick={() => logOutUser(user)}>Log out</button>

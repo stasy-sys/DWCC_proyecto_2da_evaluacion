@@ -1,0 +1,25 @@
+.registry {
+    padding: 15px;
+    border-radius: 5px;
+    width: 400px;
+    font-size: 2em;
+    margin: 20px auto;
+    background: #ffd3d9ab;
+    box-shadow: #7f1d6642 5px 5px;
+}
+.registry input, .registry button {
+    font-size: 1em;
+    min-height: 1em;
+    padding: 5px;
+    margin: 5px;
+    background: #ffffff8c;
+}
+
+.registry span {
+    display: block;
+}
+
+.error {
+    font-size: 0.8em;
+    color: darkred;
+}

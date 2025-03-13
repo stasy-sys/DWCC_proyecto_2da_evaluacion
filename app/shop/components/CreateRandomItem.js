@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker/locale/en';
 
 export default function CreateRandomItem({saveItem}) {
     function createRandom(){
-        const imgNum = faker.number.int({ min: 0, max: 11 });
+        const imgNum = faker.number.int({ min: 1, max: 11 });
         const item = new Item(
             null,
             faker.commerce.productName(),

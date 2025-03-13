@@ -15,6 +15,10 @@
     4. ~~Create "change quantity" for cart list.~~
     5. ~~Create "remove" button for cart list.~~
 5. Create login/register initial page.
+    1. ~~Create user object + repository.~~
+    2. Create register form.
+    3. Create login form.
+    4. Create logout button.
 6. Create users logic.
 7. Design andd implement ux/ui
 8. Deliver and present.

@@ -22,6 +22,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #3b0c278a;
+  background-image: url(//shop.baby-aatp.com/cdn/shop/t/4/assets/bg.png?v=78981895935104869871450079679);
+  background-repeat: repeat;
+  background-position: left top;
+  background-blend-mode: lighten;
 }
 
 * {
